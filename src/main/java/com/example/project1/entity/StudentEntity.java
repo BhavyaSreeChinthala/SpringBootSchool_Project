@@ -1,8 +1,10 @@
 package com.example.project1.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.Data;
 
+@Schema(name = "Student", description = "Details about a student in the school")
 @Data
 @Entity
 @Table(name = "childrens")
@@ -13,12 +15,15 @@ public class StudentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Schema(description = "Name of the Student", example = "Bhavya")
     @Column(nullable = false)
     private String name;
 
+    @Schema(description = "Email of the Student", example = "bhavya@gmail.com")
     @Column(nullable = false)
     private String email;
 
+    @Schema(description = "Mobile number of the Student", example = "9963921536")
     @Column(name = "Mobile", nullable = false)
     private String mobile;
 
